@@ -1,0 +1,48 @@
+body{
+    background-color: black;
+}
+
+.top-heading{
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+.two-conatiners{
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.input-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    width: 100%;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.cards{
+    width: 100%;
+    color: white;
+}
+
+.input-field{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+label{
+    width: 100%;
+}
+input{
+    width: 100%;;
+}
