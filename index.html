@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dynamic Card Inserter</title>
+   <!-- 👇 Import Raleway font -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+   <!-- 👇 Import Icon Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -14,7 +18,11 @@
     <h1>Welcome to Dynamic Card Inserter</h1>
   </div>
   <div class="two-conatiners">
+    
     <div class="input-form">
+      <h2>Create a new card</h2>
+      <p>Type details to add a new card to the card list.</p>
+
       <div class="input-field">
         <label for="card-title"> Card Title </label>
         <input type="text" id="card-title" placeholder="Enter Card Title">
@@ -39,6 +47,9 @@
         <label for="thumbnail">Thumbnail </label>
           <input type="file" id="thumbnail" accept="image/*">
       </div>
+
+      <button>Create Card <i class="fa-solid fa-arrow-right"></i>
+      </button>
     </div>
 
     <div class="cards">Hello Dost G</div>

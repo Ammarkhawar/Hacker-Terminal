@@ -1,14 +1,69 @@
-body{
-    background-color: black;
+* {
+    font-family: 'Poppins', sans-serif;
 }
 
-.top-heading{
+h1{
+    font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+    width: 100%;
+    color: #780000;
+    font-size: 26px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600; /* semi-bold */
+    text-transform: uppercase; /* all caps */
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+p{
+    width: 100%;
+    margin-top: 0px;
+    color: #122836;
+    font-size: 16px;
+}
+
+button{
+    width: 100%;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 26px;
+    padding-right: 26px;
+    background-color: #780000;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 400; 
+    border-radius: 3px;
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:active{
+    transform: scale(0.96);
+}
+
+body {
+    background-color: rgb(66, 66, 66);
+    margin-bottom: 50px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.top-heading {
     color: white;
     text-align: center;
     align-items: center;
 }
 
-.two-conatiners{
+.two-conatiners {
     display: flex;
     flex-direction: row;
     margin-left: 50px;
@@ -17,32 +72,57 @@ body{
     gap: 50px;
 }
 
-.input-form{
+.input-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: aliceblue;
-    width: 100%;
-    padding: 30px;
+    background-color: white;
+    width: 60%;
+    padding: 50px;
     border-radius: 16px;
+    gap: 16px;
+    box-shadow: 4px 10px 42px rgba(0, 0, 0, 0.2);
 }
 
-.cards{
+.cards {
     width: 100%;
     color: white;
 }
 
-.input-field{
+.input-field {
     display: flex;
     flex-direction: column;
     align-items: start;
     width: 100%;
+    gap: 6px;
 }
 
-label{
+label {
     width: 100%;
+    color: #780000;
 }
-input{
-    width: 100%;;
+
+input {
+    width: 100%;
+    border-radius: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #BABABA;
+    box-sizing: border-box;
+    /* 👈 Fixes the overflow */
+    outline: none;
 }
+
+input:focus::placeholder {
+    color: transparent;
+
+}
+
+input::placeholder {
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
