@@ -88,6 +88,7 @@ body {
     justify-content: center;
     background-color: white;
     width: 60%;
+    height: fit-content;
     padding: 50px;
     border-radius: 16px;
     gap: 16px;
@@ -132,6 +133,9 @@ input::placeholder {
 .cards {
     width: 100%;
     background-color: white;
+    display: flex ;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .card{
@@ -146,7 +150,7 @@ input::placeholder {
     box-shadow: 4px 10px 42px rgba(0, 0, 0, 0.2);
 }
 
-.video-number{
+.videoCount{
     color: white;
     color: #959595;
     font-size: 14px;
@@ -156,7 +160,7 @@ input::placeholder {
   position: relative;   /* important: sets reference for absolute child */
   width: 50%;
   height: 100%;
-  background-image: url('https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA'); /* 👈 set image */
+  /* background-image: url('https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA'); 👈 set image */
   background-size: cover;   /* make it cover the whole div */
   background-position: center; /* center the image */
   border-radius: 10px; /* round the corners */
