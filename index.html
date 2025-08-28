@@ -1,97 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Card Inserter</title>
-  <!-- 👇 Import Raleway font -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-  <!-- 👇 Import Icon Library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Hacker's Terminal</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
-  <div class="top-heading">
-    <h1>Welcome to Dynamic Card Inserter</h1>
-  </div>
-  <div class="two-conatiners">
 
-    <div class="input-form" id="input-form">
-      <h2>Create a new card</h2>
-      <p>Type details to add a new card to the card list.</p>
-      
-      <div class="input-field">
-        <label for="cTitle"> Card Title </label>
-        <input type="text" id="cTitle" name="cTitle" placeholder="Enter Card Title">
-      </div>
-      <div class="input-field">
-        <label for="Cname"> Channel Name </label>
-        <input type="text" id="Cname" name="cName" placeholder="Enter Channel Name">
-      </div>
-      <div class="input-field">
-        <label for="videoViews"> Video Views </label>
-        <input type="number" id="videoViews" name="videoViews" placeholder="Enter Video Views">
-      </div>
-      <div class="input-field">
-        <label for="monthsOld"> How many months old? </label>
-        <input type="number" id="monthsOld" name="monthsOld" placeholder="How many months old?">
-      </div>
-      <div class="input-field">
-        <label for="duration">Enter time (MM:SS): </label>
-        <input type="text" id="duration" name="duration" pattern="^\d{1,2}:\d{2}$" placeholder="MM:SS">
-      </div>
-      <div class="input-field">
-        <label for="thumbnail">Thumbnail </label>
-        <input type="file" id="thumbnail" name="thumbnail" accept="image/*">
-      </div>
+  <h1>This is Hacker's Terminal Baby</h1>
 
-      <button onclick="getValues()">Create Card <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-
-    <div class="cards" id="cards">
-      <!-- Card 1 -->
-      <div class="card">
-
-        <!-- Video Number -->
-        <p class="videoCount" id="videoCount">1</p>
-
-        <!-- Video Thumbnail & Video Duration -->
-        <div class="card-thumbnail" style="background-image: url('https://i.ytimg.com/vi/tVzUXW6siu0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDf-xrqgUw55JSfKsoykKVhngkzRA')">
-          <div class="video-duration">
-            <p>31:20</p>
-          </div>
-        </div>
-
-        <!-- Video Details -->
-        <div class="card-details">
-
-          <!-- Card Title -->
-          <h3 class="card-title">Welcome to my Acting</h3>
-
-          <!-- Other Details -->
-          <div class="small-details">
-            <p class="channel-name">CodeWithActing</p>
-            <div class="seperator">•</div>
-            <p class="video-views">5.7M views</p>
-            <div class="seperator">•</div>
-            <p class="months-old">2 months ago</p>
-          </div>
-
-        </div>
-
-        <!-- Vertical Ecllipse Icon -->
-         <i class="fa-solid fa-ellipsis-vertical"></i>
-
-      </div>
-
-    </div>
+  <div class="terminal">
+    <h2 id="hText">Add your text here</h2>
   </div>
 
-
+  
 </body>
-
 </html>

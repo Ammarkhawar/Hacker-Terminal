@@ -1,93 +1,213 @@
-let inputForm = document.getElementById("input-form")
-console.log("inputForm = ", inputForm)
+// function cookMeal(food, callback){
+//     console.log(`Cooking ${food}...`);
+//     setTimeout(() => {
+//         console.log(`${food} is ready Braaaather!`);
+//         callback();
+//     }, 5000)
+// }
 
-function getValues() {
+// cookMeal('Biryani', () => {
+//     cookMeal('Chicken Karahi', () => {
+//         cookMeal('Nihari', () => {
+//             cookMeal('Seekh Kabab', () => {
+//                 console.log('All meals are ready!');
+//                 // You can add more meals here if needed
+//             })
+//         })
+//     })
+// });
 
-    // get values
-    let cTitle = document.getElementById("cTitle").value;
-    let Cname = document.getElementById("Cname").value;
-    let videoViews = document.getElementById("videoViews").value
-    let monthsOld = document.getElementById("monthsOld").value
-    let duration = document.getElementById("duration").value
-    let fileInput = document.getElementById("thumbnail")
-    let file = fileInput.files[0]; // get the selected file
 
-    console.log("cTitle = ", cTitle)
-    console.log("Cname = ", Cname)
-    console.log('videoViews = ', videoViews)
-    console.log('monthsOld = ', monthsOld)
-    console.log('duration = ', duration)
-    console.log('fileInput =', fileInput)
-    console.log('file = ', file)
+// let p1 = new Promise((resolve, reject) => {
+//     let isClean = true; // Change this to false to simulate an error
+//     if (isClean){
+//         resolve("Room is clean Braaather ✅")
+//     }
+//     else{
+//         reject("Room is not clean Braaather ❌")
+//     }
+// })
 
-    createCard(cTitle, Cname, videoViews, monthsOld, duration, file);
+// p1
+//   .then(result => console.log("result: ", result)) // when resolved
+//   .catch(error => console.error("error: ", error)); // when rejected
+
+
+// function cook(food) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(`${food} is ready 🍴`), 1000);
+//   });
+// }
+
+// cook("Rice")
+//   .then(msg => {
+//     console.log(msg);
+//     return cook("Chicken");
+//   })
+//   .then(msg => {
+//     console.log(msg);
+//     return cook("Soup");
+//   })
+//   .then(msg => console.log(msg));
+
+
+
+// async function getData(){
+//     let x = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+//     console.log("x:", x)
+//     let data = await x.json()
+//     console.log("data:", data)
+//     return data
+// }
+
+// async function main() {
+//     console.log('Start');
+
+//     let data = await getData();
+//     console.log('Data received:', data);
+
+// }
+
+// main();
+
+// let text = document.querySelector('.terminal h2');
+// console.log("text:", text.textContent)
+
+// async function StartBlinking(txt) {
+
+//   text.textContent = txt;
+//   let tempTxt = txt;
+
+//   return new Promise((resolve) => {
+//     if (txt === "Hacking Complete!") {
+//       text.textContent = txt;
+//       resolve(txt);
+//       return;
+//     }
+//     else {
+//       if (text.textContent.endsWith('...')) {
+//         text.textContent = txt;
+//         StartBlinking(txt);
+//       }
+//       else {
+//         while(true){
+//           setTimeout(() => {
+//             tempTxt = txt + '.';
+//             text.textContent = tempTxt
+//           }, 500)
+//         }
+//       }
+//     }
+//   })
+// }
+
+// let alerts = [
+//   "Initizalzing Hacking",
+//   "Reading System Files",
+//   "Password Files Detected",
+//   "Sending all passwords and personal data to server",
+//   "Cleaning up traces",
+//   "Hacking Complete!"
+// ];
+
+// alerts.forEach(txt => {
+//   setTimeout( () => {
+//      StartBlinking(txt);
+//   }, alerts.indexOf(txt) * Math.floor(Math.random() * 7) * 1000);
+
+// });
+
+
+
+
+let alerts = [
+  "Initizalzing Hacking",
+  "Reading System Files",
+  "Password Files Detected",
+  "Sending all passwords and personal data to server",
+  "Cleaning up traces",
+  "Hacking Complete!"
+];
+
+let text = document.querySelector('.terminal h2');
+
+// STEP 1: start/stop-able blinker
+function StartBlinking(txt) {
+  if (txt === "Hacking Complete!") {
+    text.textContent = txt;
+    return null; // No blinking needed
+  }
+  else {
+    text.textContent = txt;
+    let dots = 0;
+    const id = setInterval(() => {
+      dots = (dots + 1) % 4; // Cycle through 0, 1, 2, 3
+      text.textContent = txt + '.'.repeat(dots);
+    }, 500)
+
+    // Return a function to stop the blinking
+    return function stop() {
+      clearInterval(id);
+    };
+  }
 }
 
-function createCard(cTitle, Cname, videoViews, monthsOld, duration, file) {
-
-      // create a temporary URL for the file
-    let imageUrl = URL.createObjectURL(file);
-    console.log('imageUrl = ', imageUrl)
-
-    // Increment the Card Number
-    let videoCountElement = document.getElementsByClassName("videoCount")
-    let numbers = [];
-    for (let i = 0; i < videoCountElement.length; i++) {
-        numbers.push(videoCountElement[i].innerHTML)
-    }
-    console.log("numbers = ", numbers)
-
-    let maxNum = Math.max(...numbers)
-    console.log("maxNum =", maxNum)
-
-    let videoCount = ++maxNum;
-    console.log('videoCount =', videoCount)
-
-    // 1. Select the parent div
-    let cards = document.getElementById("cards")
-    console.log("cards =", cards)
-
-    // 2. Create a new div
-    let newCard = document.createElement("div")
-    console.log("newCard =", newCard)
-
-    // 3. Add a class name
-    newCard.classList.add("card");
-
-    // 4. Add some content
-    newCard.innerHTML = `<!-- Video Number -->
-        <p class="videoCount" id="videoCount">${videoCount}</p>
-
-        <!-- Video Thumbnail & Video Duration -->
-        <div class="card-thumbnail">
-          <div class="video-duration">
-            <p>${duration}</p>
-          </div>
-        </div>
-
-        <!-- Video Details -->
-        <div class="card-details">
-
-          <!-- Card Title -->
-          <h3 class="card-title">${cTitle}</h3>
-
-          <!-- Other Details -->
-          <div class="small-details">
-            <p class="channel-name">${Cname}</p>
-            <div class="seperator">•</div>
-            <p class="video-views">${videoViews} views</p>
-            <div class="seperator">•</div>
-            <p class="months-old">${monthsOld} months ago</p>
-          </div>
-
-        </div>
-
-        <!-- Vertical Ecllipse Icon -->
-         <i class="fa-solid fa-ellipsis-vertical"></i>
-    `
-     // set dynamic background image for this card
-  newCard.querySelector(".card-thumbnail").style.backgroundImage = `url('${imageUrl}')`;
-
-    // 5. Append Child to Cards Div
-    cards.appendChild(newCard);
+// STEP 2: Creating a function to generate random seconds
+function randSeconds(min = 1, max = 7) {
+  return (Math.floor(Math.random() * (max - min + 1)) + min) * 1000;
 }
+
+
+let stop = null;
+let totalDelay = 0;
+
+// Step 3: Start the first alert immediately
+stop = StartBlinking(alerts[0]);
+
+// Step 4: schedule the rest, each after a random extra delay
+for (let i = 1; i < alerts.length; i++) {
+  const delay = randSeconds();
+  totalDelay += delay;
+
+  setTimeout(() => {
+    if (stop) stop();               // stop previous blinking
+    stop = StartBlinking(alerts[i]); // start new blinking
+  }, totalDelay);
+}
+
+
+
+
+
+// async function StartBlinking(txt) {
+
+//   text.textContent = txt;
+//   let tempTxt = txt;
+
+//   return new Promise((resolve) => {
+//     if (txt === "Hacking Complete!") {
+//       text.textContent = txt;
+//       resolve(txt);
+//       return;
+//     }
+//     else {
+//       if (text.textContent.endsWith('...')) {
+//         text.textContent = txt;
+//         StartBlinking(txt);
+//       }
+//       else {
+//         let dotCount = 0;
+//         let intervalId = setInterval(() => {
+//           if (dotCount < 3) {
+//             dotCount++;
+//             tempTxt = txt + '.'.repeat(dotCount);
+//             text.textContent = tempTxt;
+//           } else {
+//             clearInterval(intervalId);
+//             StartBlinking(txt);
+//           }
+//         }, 500);
+//       }
+//     }
+//   })
+// }
